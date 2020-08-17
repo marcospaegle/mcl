@@ -174,7 +174,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        
     ],
 
     /*
@@ -227,6 +227,12 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+    ],
+
+    'marvel' => [
+        'pubKey' => env('MARVEL_PUB_KEY'),
+        'priKey' => env('MARVEL_PRI_KEY'),
+        'baseUrl' => env('MARVEL_URL'),
     ],
 
 ];

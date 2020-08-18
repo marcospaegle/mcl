@@ -16,7 +16,7 @@ class Character
             $this->id = $attr['id'];
             $this->name = $attr['name'];
             $this->description = $attr['description'];
-            $this->modified = $attr['modified'];
+            $this->modified = new \DateTime($attr['modified']);
             $this->thumbnail = $attr['thumbnail'];
         } catch (\Throwable $th) {
             throw $th;

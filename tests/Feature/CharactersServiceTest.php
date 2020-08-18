@@ -19,4 +19,17 @@ class CharactersServiceTest extends TestCase
         $this->assertInstanceOf(Collection::class, $result);
         $this->assertCount(20, $result);
     }
+
+    /** @test */
+    public function can_fetch_a_single_character_from_marvel_api()
+    {
+        $characterId = 1011334;
+        
+        $service = new CharactersService();
+        $result = $service->findBy($characterId);
+
+        $this->assertIsArray($result);
+        $this->assertEquals($result['id'], $characterId);
+        $this->assertEquals($result['name'], '3-D Man');
+    }
 }

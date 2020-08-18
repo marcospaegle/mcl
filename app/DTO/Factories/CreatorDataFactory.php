@@ -3,19 +3,22 @@
 namespace App\DTO\Factories;
 
 use Illuminate\Support\Collection;
-use App\DTO\Character;
+use App\DTO\Creator;
 
-class CharacterDataFactory
+class CreatorDataFactory
 {
-    public static function fromAttributes(array $attributes) : Character
+    public static function fromAttributes(array $attributes) : Creator
     {
         try {
-            return new Character([
+            return new Creator([
                 'id' => $attributes['id'],
-                'name' => $attributes['name'],
-                'description' => $attributes['description'],
+                'firstName' => $attributes['firstName'],
+                'middleName' => $attributes['middleName'],
+                'lastName' => $attributes['lastName'],
+                'suffix' => $attributes['suffix'],
+                'fullName' => $attributes['fullName'],
                 'modified' => $attributes['modified'],
-                'thumbnail' => trim($attributes['thumbnail']['path']) . '.' . trim($attributes['thumbnail']['extension']),
+                'thumbnail' => $attributes['thumbnail']['path'] . '.' . $attributes['thumbnail']['extension'],
             ]);
         } catch (\Throwable $th) {
             throw $th;

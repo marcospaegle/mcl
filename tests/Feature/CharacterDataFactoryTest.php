@@ -9,10 +9,10 @@ use Tests\TestCase;
 use App\DTO\Factories\CharacterDataFactory;
 use App\DTO\Character;
 
-class CharactersDataFactoryTest extends TestCase
+class CharacterDataFactoryTest extends TestCase
 {
     /** @test */
-    public function can_create_from_attributes_array()
+    public function can_create_character_from_attributes_array()
     {
         $modified = new \DateTime('2014-04-29T14:18:17-0400');
 
@@ -38,7 +38,7 @@ class CharactersDataFactoryTest extends TestCase
     }
 
     /** @test */
-    public function can_create_from_collection_array()
+    public function can_create_characters_from_array_collection()
     {
         $modified = new \DateTime('2014-04-29T14:18:17-0400');
 
